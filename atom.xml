@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://happymaker1.github.io/</id>
-    <title>Gridea</title>
-    <updated>2021-02-23T05:30:25.099Z</updated>
+    <title>HappyMaker_blog</title>
+    <updated>2021-02-23T05:31:06.685Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://happymaker1.github.io/"/>
     <link rel="self" href="https://happymaker1.github.io/atom.xml"/>
     <subtitle>温故而知新</subtitle>
     <logo>https://happymaker1.github.io/images/avatar.png</logo>
     <icon>https://happymaker1.github.io/favicon.ico</icon>
-    <rights>All rights reserved 2021, Gridea</rights>
+    <rights>All rights reserved 2021, HappyMaker_blog</rights>
     <entry>
         <title type="html"><![CDATA[Hello Gridea]]></title>
         <id>https://happymaker1.github.io/post/hello-gridea/</id>
