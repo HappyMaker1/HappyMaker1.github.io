@@ -1,0 +1,730 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.bootcdn.net/ajax/libs/font-awesome/5.15.1/css/all.css" rel="stylesheet">
+    <title>Happy Maker's Blog</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        body {
+            scrollbar-base-color: aquamarine;
+            scrollbar-face-color: aquamarine;
+            scrollbar-arrow-color: aquamarine;
+            background-color: #2f2f2f;
+            overflow-y: scroll;
+            overflow-x: hidden;
+        }
+
+        .header {
+            position: relative;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            background-image: url("images/街道.jpeg");
+            background-repeat: none;
+            background-position: center;
+            background-color: none;
+            background-attachment: fixed;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #1E9FFF;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: aquamarine;
+        }
+
+        ::-webkit-scrollbar {
+            width: 0;
+        }
+
+
+        /* .header .home video {
+            width: 100%;
+            height: 100vh;
+            background-position: certer;
+            background-repeat: no-repeat;
+            background-attachment: scroll;
+            background: scroll;
+            object-fit: cover;
+        } */
+
+        .header .first .box {
+            float: left;
+            position: absolute;
+            top: 50px;
+            left: 60px;
+            width: 40px;
+            height: 32px;
+            padding: 4px;
+            padding-right: 2px;
+            border-radius: 10px;
+            overflow: hidden;
+            transition: 2s;
+            background-color: rgba(0, 0, 0, 0.1);
+        }
+
+
+        .header .first .box:hover {
+            width: 132px;
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+
+
+        .header .first .box ul li {
+            float: left;
+            list-style: none;
+        }
+
+        .header .search {
+            position: absolute;
+            top: 50px;
+            left: 85%;
+            padding-left: 7px;
+            padding-right: 5px;
+            background-color: rgba(0, 0, 0, 0.1);
+
+        }
+
+        .header .search .search-txt {
+            float: left;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding-top: 2px;
+            line-height: 44px;
+            background: none;
+            width: 0;
+            border: none;
+            outline: none;
+            color: whitesmoke;
+            transition: 0.6s;
+            font-size: 16px;
+        }
+
+        .header .search .search-btn {
+            float: right;
+            font-size: 32px;
+            border-radius: 50%;
+            padding: 5px;
+            color: whitesmoke;
+        }
+
+        .header .search:hover .search-txt {
+            width: 150px;
+        }
+
+        .search:hover>.search-btn {
+            color: aquamarine;
+        }
+
+        .header .centerfont .name {
+            position: absolute;
+            left: 50%;
+            top: 40%;
+            transform: translate(-50%, -50%);
+            font-size: 32px;
+            font-family: 'STXingkai';
+            color: cyan;
+        }
+
+        .header .centerfonttwo {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: whitesmoke;
+
+        }
+
+        .header .centerfontthree {
+            position: absolute;
+            top: 55%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: whitesmoke;
+
+        }
+
+
+
+        .header .jumppage .forward {
+            position: absolute;
+            top: 93%;
+            left: 49%;
+            width: 50px;
+            height: 50px;
+            background-color: rgba(0, 0, 0, 0.1);
+        }
+
+        .header .jumppage .forward img {
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            text-align: center;
+            animation: jump 1s linear infinite alternate;
+        }
+
+        @keyframes jump {
+            0% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-7);
+            }
+
+            100% {
+                transform: translateY(-15px);
+            }
+        }
+
+        .hotarticle {
+            position: relative;
+            widows: 100%;
+            height: 100vh;
+            background-color: #fff;
+        }
+
+        .hotarticle h1 {
+            padding-top: 80px;
+            padding-bottom: 20px;
+            text-align: center;
+            text-decoration: overline;
+        }
+
+        .hotarticle p {
+            text-align: center;
+            color: gray;
+            font-size: 12px;
+        }
+
+        .hotarticle .hotcard {
+            width: 1200px;
+            height: 600px;
+            margin: 0 auto;
+        }
+
+
+        .hotarticle .cardone,
+        .hotarticle .cardtwo,
+        .hotarticle .cardthree {
+            display: inline-block;
+            position: relative;
+            background-color: #f5f5f5;
+            margin: 20px;
+            margin-top: 40px;
+            width: 350px;
+            height: 450px;
+            transition: 1.5s;
+            cursor: pointer;
+        }
+
+
+        .hotarticle .cardthree:hover {
+            transform: translateY(-5px);
+            box-shadow: 2px 2px 2px 6px cyan;
+        }
+
+        .hotarticle .cardone:hover {
+            transform: translateY(-5px);
+            box-shadow: 2px 2px 2px 6px cyan;
+        }
+
+        .hotarticle .cardtwo:hover {
+            transform: translateY(-5px);
+            box-shadow: 2px 2px 2px 6px cyan;
+        }
+
+
+        .hotarticle .cardone .cardimgone,
+        .hotarticle .cardtwo .cardimgtwo,
+        .hotarticle .cardthree .cardimgthree {
+            float: left;
+            width: 350px;
+            height: 250px;
+        }
+
+        .hotarticle .cardone .cardimgone img,
+        .hotarticle .cardtwo .cardimgtwo img,
+        .hotarticle .cardthree .cardimgthree img {
+            width: 100%;
+            height: 100%;
+        }
+
+        .hotarticle .cardone .date-one,
+        .hotarticle .cardtwo .date-two,
+        .hotarticle .cardthree .date-three {
+            padding-top: 15px;
+            font-size: 16px;
+            color: gray;
+        }
+
+        .hotarticle .hotcard .cardone p,
+        .hotarticle .hotcard .cardtwo p,
+        .hotarticle .hotcard .cardthree p {
+            display: block;
+            width: 350px;
+            padding-top: 30px;
+            padding-bottom: 50px;
+            float: left;
+            font-size: 16px;
+            color: black;
+        }
+
+        .hotarticle .hotcard .aone a,
+        .hotarticle .hotcard .atwo a,
+        .hotarticle .hotcard .athree a {
+            display: block;
+            width: 350px;
+            margin-top: 30px;
+            color: blue;
+            text-decoration: none;
+        }
+
+        .hotarticle .hotcard .cardone .shadowone {
+            position: absolute;
+            width: 350px;
+            height: 250px;
+            display: none;
+            background-color: red;
+        }
+
+        .cardimgone:hover>.shadowone {
+            display: block;
+        }
+
+        .hotclass {
+            width: 100%;
+            height: 100vh;
+            background-image: url(images/city.jpg);
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+        }
+
+        .hotclass .transparent {
+
+            width: 1535px;
+            height: 100px;
+            border: 0.5px solid white;
+        }
+
+        .hotclass .transparent .friendship {
+            float: left;
+            width: 250px;
+            height: 65px;
+            position: relative;
+            margin: 20px auto;
+            margin-left: 500px;
+            border: 2px solid white;
+            border-bottom: none;
+            transition: 1.5s;
+        }
+
+        .hotclass .transparent .myself {
+            float: right;
+            width: 250px;
+            height: 65px;
+            position: relative;
+            margin: 20px auto;
+            margin-right: 500px;
+            border: 2px solid white;
+            border-bottom: none;
+            transition: 1.5s;
+        }
+
+        .hotclass .transparent .myself:hover {
+            border-bottom: 2px solid white;
+        }
+
+        .hotclass .transparent .myself .myselfmain {
+            width: 0;
+            height: 65px;
+            background-color: cyan;
+            transition: 1.5s;
+        }
+
+        .hotclass .transparent a {
+            text-decoration: none;
+        }
+
+        .hotclass .transparent .myself .myselfmain:hover {
+            width: 250px;
+        }
+
+        .hotclass .transparent .myself .myselfmain .close {
+            position: absolute;
+            color: white;
+            text-align: center;
+            line-height: 65px;
+            margin-left: 75px;
+            font-size: 20px;
+        }
+
+        .hotclass .transparent .friendship .open {
+            /* position: absolute; */
+            background-color: cyan;
+            width: 0;
+            height: 65px;
+            transition: 1.5s;
+        }
+
+
+        .hotclass .transparent .friendship .open .openyes {
+            position: absolute;
+            display: block;
+            font-size: 20px;
+            margin-left: 35px;
+            text-align: center;
+            line-height: 65px;
+            color: white;
+        }
+
+        .hotclass .transparent .friendship:hover {
+            border-bottom: 2px solid white;
+        }
+
+        .hotclass .transparent .friendship .open:hover {
+            width: 250px;
+        }
+
+        .hotclass .about {
+            position: relative;
+            width: 1536px;
+            height: 500px;
+            background-color: #f5f5f5;
+        }
+
+        .hotclass .about h1 {
+            padding-top: 50px;
+            text-align: center;
+
+        }
+
+        .hotclass .about .font {
+            padding-top: 40px;
+            line-height: 40px;
+            text-align: center;
+            font-size: 20px;
+            font-family: '幼圆';
+        }
+
+        .hotclass .about .duan {
+            position: absolute;
+            top: 70%;
+            left: 37%;
+            font-size: 18px;
+            font-family: 'STKaiti';
+        }
+
+        .hotclass .about .icon {
+            position: absolute;
+            top: 70%;
+            right: 100px;
+            font-size: 20px;
+
+        }
+
+        .hotclass .about button {
+            position: absolute;
+            top: 80%;
+            left: 50%;
+            margin-left: -20px;
+            width: 80px;
+            height: 40px;
+            border-radius: 5px;
+            color: black;
+            background-color: #f5f5f5;
+            cursor: pointer;
+        }
+
+
+        .hotclass .about button:hover {
+            color: white;
+            background-color: #2f2f2f;
+        }
+
+        .hotclass .transparentbox {
+            width: 100%;
+            height: 190px;
+            background-color: rgba(0, 0, 0, 0.4);
+        }
+
+        .hotclass .transparentbox h2 {
+            padding-top: 35px;
+            text-align: center;
+            color: white;
+            font-family: 'STKaiti';
+        }
+
+        .hotclass .transparentbox p {
+            padding-top: 15px;
+            text-align: center;
+            color: white;
+            font-family: 'STKaiti';
+        }
+
+        footer {
+            width: 100%;
+            height: 200px;
+            /* background-color: #2f2f2f; */
+        }
+
+        footer .home-name {
+            float: left;
+            margin-left: 120px;
+            width: 300px;
+            height: 250px;
+        }
+
+        footer .home-name h4 {
+            padding-top: 60px;
+            padding-left: 20px;
+            font-size: 36px;
+            color: cyan;
+            font-family: 'STXingkai';
+        }
+
+        footer .home-name p {
+            padding-top: 15px;
+            padding-left: 20px;
+            color: white;
+            font-family: 'STKaiti';
+        }
+
+        footer .home-name button {
+            width: 75px;
+            height: 35px;
+            background-color: #1E9FFF;
+            margin-top: 30px;
+            margin-left: 20px;
+            border-radius: 5px;
+            outline: none;
+            color: white;
+            cursor: pointer;
+        }
+
+        footer .home-two {
+            float: left;
+            margin-left: 75px;
+            width: 300px;
+            height: 250px;
+        }
+
+        footer .home-two ul h4 {
+            padding-top: 60px;
+            color: white;
+            font-family: 'STKaiti';
+            list-style: none;
+            font-size: 24px;
+
+        }
+
+        footer .home-two ul li {
+            padding-top: 30px;
+            list-style: none;
+        }
+
+        footer .home-three {
+            float: left;
+            width: 300px;
+            height: 250px;
+        }
+
+        footer .home-three ul {
+            padding-top: 90px;
+        }
+
+        footer .home-three ul li {
+            padding-top: 30px;
+            list-style: none;
+
+        }
+
+        footer .home-two a,
+        footer .home-three a {
+            text-decoration: none;
+            color: white;
+        }
+
+        footer .home-four {
+            float: left;
+            margin-left: 120px;
+            width: 300px;
+            height: 250px;
+        }
+
+        footer .home-four ul h4 {
+            padding-top: 60px;
+            color: white;
+            font-family: 'STKaiti';
+            list-style: none;
+            font-size: 24px;
+
+        }
+
+        footer .home-four ul li {
+            padding-top: 30px;
+            list-style: none;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header">
+        <div class="first">
+            <div class="box">
+                <ul>
+                    <li><a href="#"><img src="images/目录 (1).png" alt=""></a></li>
+                    <li><a href="子网页/博客.html"><img src="images/主页 (1).png" alt=""></a></li>
+                    <li><a href="#"><img src="images/赞.png" alt=""></a></li>
+                    <li><a href="#"><img src="images/iconfont-zuanshi_复制 (1).png" alt=""></a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="search">
+            <input type="search" class="search-txt" placeholder="请输入查找">
+            <a class="search-btn">
+                <i class="fas fa-search"></i>
+            </a>
+        </div>
+        <div class="centerfont">
+            <div class="name">
+                <span>Happy Maker</span>
+            </div>
+        </div>
+        <div class="centerfonttwo">行至朝雾里,坠入暮云间</div>
+        <div class="centerfontthree">与我捻熄灯,同我书半生。问我粥可温，同我立黄昏</div>
+        <div class="jumppage">
+            <div class="forward"><a href="#in"><img src="images/下 (2).png" alt=""></a>
+            </div>
+        </div>
+    </div>
+    </div>
+
+
+    <div class="hotarticle">
+        <h1 id="in">热门文章</h1>
+        <p>你在人间，我亦在</p>
+        <p>莫问天涯，莫问归期</p>
+        <div class="hotcard">
+            <div class="cardone">
+                <div class="cardimgone">
+                    <a href="#"><img src="images/长安街.jpg" alt=""></a>
+                    <div class="shadowone"></div>
+                </div>
+                <h4>关于本站</h4>
+                <div class="date-one">2020-12-27</div>
+                <p>关于本站，有兴趣可进入</p>
+                <div class="aone"><a href="#">浏览更多...</a></div>
+            </div>
+            <div class="cardtwo">
+                <div class="cardimgtwo">
+                    <a href="#"><img src="images/html5.jpg" alt=""></a>
+
+                    <div class="shadowtwo"></div>
+                </div>
+                <h4>关于HTML心得</h4>
+                <div class="date-two">2020-12-27</div>
+                <p>这是我在学习HTML时的心得和感悟，欢迎交流</p>
+                <div class="atwo"><a href="#">浏览更多...</a></div>
+            </div>
+            <div class="cardthree">
+                <div class="cardimgthree">
+                    <a href="#"> <img src="images/css.jpg" alt=""></a>
+                    <div class="shadowthree"></div>
+                </div>
+                <h4>关于CSS心得</h4>
+                <div class="date-three">2020-12-27</div>
+                <p>这是我在学习CSS时的心得与感悟，欢迎交流</p>
+                <div class="athree"><a href="#">浏览更多...</a></div>
+            </div>
+        </div>
+    </div>
+    <div class="hotclass">
+        <div class="transparent">
+            <div class="friendship">
+                <div class="open">
+                    <div class="openyes">+友链，友谊的链接</div>
+                </div>
+            </div>
+            <div class="myself">
+                <div class="myselfmain">
+                    <div class="close">关于我们</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="about">
+            <h1>About Me</h1>
+            <div class="font">
+                <p>我有过"春风得意马蹄疾，一日看尽长安花"的得意</p>
+                <p>也有过"竹杖芒鞋轻胜马，谁怕？一蓑烟雨任平生"的豁达</p>
+                <p>不会忘记"曾经沧海难为水，除却巫山不是云"的惆怅</p>
+                <p>想"蓦然回首"，却忘记"那人却在灯火阑珊处"</p>
+            </div>
+            <div class="duan">Do not ask the end of the world,do not ask the return date.</div>
+            <div class="icon">—————《莫问》</div>
+            <a href="子网页/博客.html"><button>More></button></a>
+        </div>
+        <div class="transparentbox">
+            <div class="fontwork">
+                <h2>生活的倔强者</h2>
+                <p>我和我最后的倔强，握紧双手绝对不放</p>
+                <p>虽然幸苦，我还是会选择那种滚烫的人生</p>
+            </div>
+        </div>
+    </div>
+
+
+
+    <footer>
+        <div class="home-name">
+            <h4>Happy Maker</h4>
+            <p>行至朝雾里,坠入暮云间</p>
+            <a href="子网页/博客.html"><button>About me</button></a>
+        </div>
+        <div class="home-two">
+            <ul>
+                <h4>相关链接</h4>
+                <li><a href="子网页/博客.html">博客</a></li>
+                <li><a href="子网页/诗词.html">诗词</a></li>
+                <li><a href="子网页/时间轴.html">时间轴</a></li>
+            </ul>
+        </div>
+
+        <div class="home-three">
+            <ul>
+                <li><a href="子网页/照片墙.html">照片墙</a></li>
+                <li><a href="子网页/关于我.html">关于我</a></li>
+            </ul>
+        </div>
+
+        <div class="home-four">
+            <ul>
+                <h4>联系我</h4>
+                <li>地址：江西软件职业技术大学</a></li>
+                <li>邮箱：2391468810@qq.com</a></li>
+                <li>QQ：2391468810</a></li>
+            </ul>
+        </div>
+    </footer>
+
+
+
+
+
+</body>
+
+</html>
